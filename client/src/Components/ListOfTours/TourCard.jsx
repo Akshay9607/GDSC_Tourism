@@ -11,8 +11,16 @@ import { AiFillHeart } from 'react-icons/ai';
 // import { Alert } from '@mui/material';
 // import {useAlert} from 'react-alert'
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { getTours } from '../../Redux/slice';
+
+
+
 function TourCard() {
 	const { t, i18n } = useTranslation();
+    
+	const tours = useSelector(getTours) ;
+    console.log(tours) ;
 
 	return (
 		<>

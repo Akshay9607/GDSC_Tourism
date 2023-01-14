@@ -16,6 +16,15 @@ const addTour = async (req, res, next) => {
 	});
 };
 
+const getAllTours = async (req, res, next) => {
+	try {
+		let tours = await Tour.find();
+		res.status(200).json(tours);
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+	}
+};
+
 const getAllToursEnglish = async (req, res, next) => {
 	try {
 		let tours = await Tour.find();
@@ -66,6 +75,7 @@ const getTourByIDArabic = async (req, res, next) => {
 
 module.exports = {
 	addTour,
+	getAllTours ,
 	getAllToursEnglish,
 	getAllToursArabic,
 	getTourByIDEnglish,
