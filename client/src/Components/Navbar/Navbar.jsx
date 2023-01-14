@@ -6,23 +6,42 @@ import "./navbar.css";
 import {CgToggleOn,CgToggleOff} from "react-icons/cg"
 import { useState , Suspense } from "react";
 
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from 'react-i18next';
+import { changeLanguage } from "i18next"; 
+import { getDirection, getisLangEng, toggleLanguage } from "../../Redux/slice";
 
 
-const Navbar = (props) => {
-  const[islangEng , setLangEng] = useState(true) ;
+const Navbar = () => {
+  const[islangEnglish , setLangEng] = useState(true) ; 
   const {t , i18n} = useTranslation() ;
+  const dispatch = useDispatch() ;
+  const isLangEng = useSelector(getisLangEng) ;
+  const direction = useSelector(getDirection)
+  
+  console.log(isLangEng+"  "+direction) ;
 
-  const changeLang = (lang) => {
-    if(islangEng){
-        setLangEng(false);
-        i18n.changeLanguage(lang) ;
-        props.setDir("rtl") ;
+  
+
+  // const changeLang = (lang) => {
+  //   if(islangEng){
+  //       setLangEng(false);
+  //       i18n.changeLanguage(lang) ;
+  //       props.setDir("rtl") ;
+  //   }else{
+  //       setLangEng(true);
+  //       i18n.changeLanguage(lang) ;
+  //       props.setDir("ltr") ;
+  //   }
+  // }
+
+  const changeLang = () => {
+    if(isLangEng){
+      i18n.changeLanguage('ar');
     }else{
-        setLangEng(true);
-        i18n.changeLanguage(lang) ;
-        props.setDir("ltr") ;
+      i18n.changeLanguage('en');
     }
+     dispatch(toggleLanguage()) ;
   }
 
   return (
@@ -53,10 +72,10 @@ const Navbar = (props) => {
             <a href="/favourite">{t('navtwo')}</a>{" "}
           </Typography>
           {/* <div className="lang-toggle">  */}
-          { islangEng ?
+          { isLangEng ?
             <div className="lang-toggle">
             <Typography fontSize={20} > {t('Arabic')} </Typography>
-            <CgToggleOff size="2rem" color="#EE685F" onClick={ ()=> changeLang('ar')}  />
+            <CgToggleOff size="2rem" color="#EE685F" onClick={changeLang}  />
             <Typography fontSize={20} color="#EE685F" fontWeight={"Bold"}>
               {t('English')}
             </Typography> 
@@ -64,7 +83,7 @@ const Navbar = (props) => {
             : 
             <div className="lang-toggle">
             <Typography fontSize={20} color="#EE685F" fontWeight={"Bold"} >{t('Arabic')}</Typography>
-            <CgToggleOn size="2rem" color="#EE685F" onClick={()=>changeLang('en')} />
+            <CgToggleOn size="2rem" color="#EE685F" onClick={changeLang} />
             <Typography fontSize={20}  >
             {t('English')}
             </Typography>
