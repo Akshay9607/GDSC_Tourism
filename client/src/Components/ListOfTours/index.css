@@ -1,0 +1,69 @@
+.tourCard{
+    display: flex;
+}
+/* .tourImgBox{
+    width: 40%;
+} */
+.tourCard:hover{
+    scale: 1.02;
+    box-shadow: 4px 4px 20px rgb(163, 161, 161);
+}
+.tourData{
+    width: 140%;
+   /* padding-left: 3%; */
+}
+.tourImgBox{
+    width: 85%;
+}
+.tourImg{
+    width: 100%;
+    min-height: 100%;
+}
+.tourHeading{
+   font-size: 36px;
+   color: #EE685F;
+   text-shadow: 2px 2px 2px rgb(243, 153, 153);
+}
+.tourName{
+    text-shadow: 2px 2px 5px rgb(158, 153, 153);
+}
+.tourInfo{
+    font-size: 14px;
+    padding-right: 20px;
+    text-shadow: 1px 1px 1px rgb(173, 166, 166);
+}
+.tourHead{
+    display: flex;
+    justify-content: space-between ;
+}
+.Heart{
+    font-size: 50px;
+     padding-right: 15px;
+}
+@media screen and (max-width:900px) {
+    .tourCard{
+        display: inline-block;
+    }
+    .tourImg{
+        width: 100%;
+    }
+    .tourData{
+        width: 100%;
+        /* padding-left: 5px; */
+    }
+    .tourImgBox{
+        width: 100%;
+    }
+}
+@media screen and (max-width:400px){
+    body{
+        width: 95%;
+    }
+   .tourHead{
+    display: inline-block;
+   }
+   .Heart{
+    display: flex;
+    justify-content: center;
+   }
+}

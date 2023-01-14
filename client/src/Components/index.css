@@ -1,0 +1,76 @@
+.packageCard:hover{
+    scale: 1.05;
+    box-shadow: 4px 4px 30px rgb(92, 90, 90);
+    border-radius: 5px;
+}
+
+.packagesBox::-webkit-scrollbar{
+    display: none;
+}
+.reviewContainer::-webkit-scrollbar{
+    display: none;
+}
+.readMoreBtn:hover{
+    opacity: 0.8;
+}
+.cardImage{
+    background-image: url("https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg");
+    height: 194px;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-shadow: 3px 2px rgb(0, 0, 0);
+}
+
+.e2{
+    top: 900px;
+}
+
+
+.reviewBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.reviewContainer{
+    box-shadow: 2px 2px 15px rgb(107, 101, 101);
+    border-radius: 15px;
+}
+.reviewBox:hover{
+   scale: 1.01; 
+}
+@media screen and (max-width:600px) {
+    .reviewBox{
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:400px) {
+    body{
+        width: 95%;
+    }
+}
+
+
+/* Popular Destination */
+.popular-destination{
+    display : 'flex';
+     justify-content:"space-between"
+}
+
+/* Special-Offer */
+.cardImage-1{
+    background-image: url("https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg");
+    height: 194px;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+

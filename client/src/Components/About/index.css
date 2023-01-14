@@ -50,7 +50,7 @@ h1{
     background-image: url("../../images/img11.jpg");
     background-size: cover;
     border-radius: 5px;
-    margin-left: 2%;
+    margin: 1rem;
 }
 .socialHandles{
    padding: 9px;
@@ -98,7 +98,8 @@ h1{
    border: 1px solid #EE685F;
    border-radius: 15px;
    margin-top: 15px;
-   padding-left: 20px;
+   padding: 0 1rem;
+   /* font-size: 1.15rem; */
 }
 .inp::placeholder{
     display: flex;

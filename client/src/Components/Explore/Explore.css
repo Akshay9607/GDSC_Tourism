@@ -1,7 +1,13 @@
 .e1{
     margin-top: 10rem;
+    text-align: start;
+    /* display: flex; */
+    /* justify-content: flex-start; */
     /* width: 450px; */
     
+}
+.arltr {
+    text-align: start;
 }
 .Explore{
     display: flex;
