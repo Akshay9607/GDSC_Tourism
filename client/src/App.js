@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import './App.css';
 import {
 	BrowserRouter as Router,
@@ -7,20 +7,24 @@ import {
 } from 'react-router-dom';
 
 import LandingPage from './Home/LandingPage';
+import { useSelector } from 'react-redux';
+import { getDirection } from './Redux/slice';
 
 
 function App() {
 
-	const [direction , setDirection] = useState("ltr");
+	const direction = useSelector(getDirection)
+	
 
 	document.getElementsByTagName('html')[0].setAttribute("dir", direction );
+	
   return (
     <>
       <Router>
 				<Routes>
 					<Route
 						path='/'
-						element={<LandingPage dir={direction} setDir={setDirection} />}
+						element={<LandingPage/>}
 					/>
           </Routes>
           </Router>
