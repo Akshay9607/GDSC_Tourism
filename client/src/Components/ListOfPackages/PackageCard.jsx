@@ -8,8 +8,13 @@ import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
 
 import '../index.css';
+import { useTranslation } from 'react-i18next';
+
 
 function PackageCard() {
+
+	const {t,i18n} = useTranslation();
+
 	return (
 		<>
 			<Card
@@ -32,9 +37,9 @@ function PackageCard() {
 					<Box display='flex' justifyContent='space-between'>
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
-								Duration
+								{t("duration")}
 							</Typography>
-							<Typography fontSize={15}> 2 - Days</Typography>
+							<Typography fontSize={15}> 2 - {t("day")} </Typography>
 						</Box>
 						<span
 							style={{
@@ -43,7 +48,7 @@ function PackageCard() {
 						></span>
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
-								Price
+								{t("price")}
 							</Typography>
 							<Typography fontSize={15}>
 								Rs. 2000{' '}
@@ -53,7 +58,7 @@ function PackageCard() {
 									}}
 								>
 									{' '}
-									{10} % OFF
+									{10} % {t("off")}
 								</span>
 							</Typography>
 						</Box>
@@ -91,7 +96,7 @@ function PackageCard() {
 							width: '200px',
 						}}
 					>
-						<Link to={`/`}>Read More</Link>
+						<Link to={`/`}>{t("readmore")}</Link>
 					</Button>
 				</Box>
 			</Card>

@@ -86,7 +86,7 @@ const Explore = () => {
 					{' '}
 					<TextField
 						id='standard-basic'
-						label='City , landmark'
+						label= {t('cityinp')}
 						variant='standard'
 						value={city}
 						onChange={(e) => setCity(e.target.value)}
@@ -99,7 +99,7 @@ const Explore = () => {
 				<Box display='flex' justifyContent='space-between' alignItems='center'>
 					<Box>
 						{/* <TextField id="standard-basic" sx={{width:"10px"}} size='small' variant="standard" /> */}
-						Number of Days :
+						{t("numofdays")}
 						<Button sx={{ fontSize: '30px', color: 'black', marginRight: '8px' }} onClick={() => decrementPerson()}>
 							{' '}
 							-{' '}
