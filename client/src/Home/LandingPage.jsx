@@ -3,11 +3,12 @@ import Explore from "../Components/Explore/Explore";
 import About from "../Components/About/About";
 import Contact from "../Components/About/Contact";
 import React from 'react'
+import { useSlotProps } from "@mui/base";
 
-const LandingPage = () => {
+const LandingPage = (props) => {
   return (
     <>
-        <Navbar />
+        <Navbar dir={props.dir} setDir={props.setDir} />
         <Explore />
         <About />
         <Contact />
