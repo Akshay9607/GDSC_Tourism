@@ -9,7 +9,7 @@ import { useState , Suspense } from "react";
 import { useTranslation } from 'react-i18next';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
   const[islangEng , setLangEng] = useState(true) ;
   const {t , i18n} = useTranslation() ;
 
@@ -17,9 +17,11 @@ const Navbar = () => {
     if(islangEng){
         setLangEng(false);
         i18n.changeLanguage(lang) ;
+        props.setDir("rtl") ;
     }else{
         setLangEng(true);
         i18n.changeLanguage(lang) ;
+        props.setDir("ltr") ;
     }
   }
 
