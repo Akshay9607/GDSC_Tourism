@@ -34,9 +34,21 @@
     "send" : "Send ",
     "view" : "View",
     "price" : "Price",
+    "city" : "City",
     "off" : "OFF",
-    "duration" : "Duration" ,
+    "duration" : "Duration",
     "day" : "Day",
     "booking" : "Book Now",
-    "readmore" : "Read More"
+    "readmore" : "Read More",
+    "holidayEscape" : "HolidayEscape",
+    "support" : "Support",
+    "aboutus" : "About us",
+    "contactus" : "Contact Us",
+    "security" : "Security",
+    "privacypolicy" : "Privacy policy",
+    "legalstuff" : "Legal Stuff",
+    "copyright" : "Copyright © 2022 adventor, inc",
+    "connectus" : "Connect Us",
+    "booknow" : "Book Now"
+    
 }

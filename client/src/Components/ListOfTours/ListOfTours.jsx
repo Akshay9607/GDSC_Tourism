@@ -7,6 +7,7 @@ function ListOfTours() {
 			<TourCard />
 			<TourCard />
 			<TourCard />
+			
 			<br />
 			<br />
 		</>

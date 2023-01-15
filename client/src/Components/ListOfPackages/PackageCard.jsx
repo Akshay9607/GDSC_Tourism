@@ -35,6 +35,7 @@ function PackageCard() {
 				</div>
 				<CardContent>
 					<Box display='flex' justifyContent='space-between'>
+					
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
 								{t("duration")}

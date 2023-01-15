@@ -34,9 +34,21 @@
     "send" : "إرسال",
     "view" : "رأي",
     "price" : "السعر",
+    "city" : "مدينة",
     "off" : "إيقاف",
     "duration" : "مدة" ,
     "day" : "يوم",
     "booking" : "احجز الآن",
-    "readmore" : "قراءة المزيد"
+    "readmore" : "قراءة المزيد",
+    "holidayEscape" : "الهروب من العطلة",
+    "support" : "الدعم" ,
+    "aboutus" : "معلومات عنا",
+    "contactus" : "اتصل بنا",
+    "legalstuff" : "الاشياء القانوني",
+    "security" : "الأمان",
+    "privacypolicy" : "سياسة الخصوصية",
+    "copyright" : "حقوق النشر © 2022 Adventor، inc",
+    "connectus" : "قم بتوصيلنا",
+    "booknow" : "احجز الآن"
+   
 }

@@ -37,7 +37,7 @@ function SpecialOfferCard() {
 					>
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
-								City
+								{t('city')}
 							</Typography>
 							<Typography fontSize={15}>{'Pune'}</Typography>
 						</Box>
@@ -50,7 +50,7 @@ function SpecialOfferCard() {
 						></span>
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
-								{("duration")}
+								{t("duration")}
 							</Typography>
 							<Typography fontSize={15}>
 								<span>{2} {t("day")}</span>
@@ -65,7 +65,7 @@ function SpecialOfferCard() {
 						></span>
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
-								{("price")}
+								{t("price")}
 							</Typography>
 							<Typography fontSize={15}>
 								Rs. {28000} <span style={{ color: '#EE685F' }}>{30}% {t("off")}</span>

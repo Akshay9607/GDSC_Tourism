@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { addTours } from '../Redux/slice';
 
 import axios from 'axios' ;
+import Footer from '../Components/Footer/footer';
 
 
 
@@ -42,6 +43,7 @@ const LandingPage = (props) => {
 			<SpecialOffer />
 			<About />
 			<Contact />
+      <Footer/>
 		</>
 	);
 };
