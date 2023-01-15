@@ -42,6 +42,15 @@
 .reviewBox:hover{
    scale: 1.01; 
 }
+
+.readMoreBtn{
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    /* align-self: flex-end; */
+    /* margin-bottom: 0; */
+}
+
 @media screen and (max-width:600px) {
     .reviewBox{
         display: inline-block;

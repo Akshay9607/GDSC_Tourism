@@ -5,13 +5,25 @@ import '../index.css';
 import SpecialOfferCard from './SpecialOfferCard';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getisLangEng } from '../../Redux/slice';
+import { getisLangEng, getTours } from '../../Redux/slice';
 
 const SpecialOffer = () => {
 
 	const {t,i18n} = useTranslation() ;
 	const isLangEng = useSelector(getisLangEng) ;
-
+	const tours = useSelector(getTours)
+	var specialPackages = [...tours];
+	specialPackages.sort((a, b) =>
+		a.englishData.offer > b.englishData.offer
+			? 1
+			: b.englishData.offer > a.englishData.offer
+			? -1
+			: 0
+	);
+	specialPackages = specialPackages.slice(
+		specialPackages.length - 2,
+		specialPackages.length
+	);
 	return (
 		<>
 			<Typography variant='h2' component='h2' align='center'>
@@ -29,8 +41,8 @@ const SpecialOffer = () => {
 				style={{ overflowX: 'scroll', padding: '20px' }}
 				className='packagesBox'
 			>
-				<SpecialOfferCard />
-				<SpecialOfferCard />
+				{specialPackages.map(tour => <SpecialOfferCard key={tour._id} tour={ tour} />)}
+				
 			</Box>
 		</>
 	);

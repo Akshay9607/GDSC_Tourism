@@ -16,13 +16,14 @@ import { getisLangEng, getTours } from '../../Redux/slice';
 
 
 
-function TourCard() {
+function TourCard({ tour}) {
 	const { t, i18n } = useTranslation();
 
-	const isLangEng = useSelector(getisLangEng) ;
+	const currLang = useSelector(getisLangEng) ;
     
-	const tours = useSelector(getTours) ;
-	
+	// const tours = useSelector(getTours) ;
+	var lang = currLang ? "englishData" : "arabicData";
+
     // console.log(tours) ; 
 
 	return (
@@ -39,7 +40,7 @@ function TourCard() {
 				<Box className='tourImgBox'>
 					<img
 						src={
-							'https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg'
+							tour[lang].imageBanner
 						}
 						alt='Tour image'
 						className='tourImg'
@@ -48,7 +49,7 @@ function TourCard() {
 				<Box className='tourData' margin={'1.5rem'}>
 					<Box className='tourHead'>
 						<Typography className='tourHeading' paddingTop='9px' fontWeight='bold' variant='h4'>
-							Lorem ipsum dolor sit amet.
+							{tour[lang].destination}
 						</Typography>
 						<Typography>
 							<span className='Heart tourHeading' style={{ fontSize: '40px', margin: '1rem' }}>
@@ -58,15 +59,12 @@ function TourCard() {
 					</Box>
 					<br />
 					<Typography variant='h6' fontWeight='bold' className='tourName'>
-						{'Maharashtra'} , {'Pune'}
+						{ tour[lang].city}
 					</Typography>{' '}
 					<br />
 					<br />
-					<Typography className='tourInfo' margin={'1rem'}>
-						Araku is an enchanting valley among the high hills of the Eastern Ghats in Visakhapatnam district. The major
-						attractions in Araku are a tribal habitat museum, a tribal village, trekking, traditional folk dances
-						including the famous . Araku is an enchanting valley among the high hills of the Eastern Ghats in
-						Visakhapatnam district.
+					<Typography className='tourInfo' margin={'1rem'} fontSize={'1.15rem'}>
+						{ tour[lang].description.slice(0, 500)}
 					</Typography>
 					<br />
                     <br />
@@ -76,7 +74,7 @@ function TourCard() {
 							<Typography>
 								{' '}
 								{t("duration")} <br />
-								<b> {2} {t("day")}</b>
+								<b> {tour[lang].duration} {t("day")}</b>
 							</Typography>
 							<Typography>
 								<div style={{ border: '1px solid #999999', height: '30px' }}> </div>
@@ -85,13 +83,13 @@ function TourCard() {
 								{' '}
 								{t("price")} <br />
 								<b>
-									Rs. 28000 <span style={{ color: '#EE685F' }}>10% {t("off")}</span>
+									Rs. {tour[lang].price} <span style={{ color: '#EE685F' }}>{ tour[lang].offer}% {t("off")}</span>
 								</b>
 							</Typography>
 						</Box>
 					</Card>
 						<Link to={`/`}>
-							<Typography variant='h6' color='white' align={isLangEng?'right':'left'} margin='1rem'>
+							<Typography variant='h6' color='white' align={currLang?'right':'left'} margin='1rem'>
 								<span
 									style={{
 										backgroundColor: '#EE685F',
