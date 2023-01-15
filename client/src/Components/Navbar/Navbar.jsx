@@ -52,7 +52,7 @@ const Navbar = () => {
         sx={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px" }} 
       >
         <div className="logo">
-          <a href="/">
+          <a className="anchor" href="/">
             <h3>
               <span>{t('h')}</span>{t("oliday")}
               <span>{t("e")}</span>{t("scape")}
@@ -66,10 +66,10 @@ const Navbar = () => {
           alignItems={"center"}
         >
           <Typography className="navItem" fontSize={20}>
-            <a href="/tours">{t('navone')}</a>
+            <a className="anchor" href="/tours">{t('navone')}</a>
           </Typography>
           <Typography className="navItem" fontSize={20}>
-            <a href="/favourite">{t('navtwo')}</a>{" "}
+            <a className="anchor" href="/favourite">{t('navtwo')}</a>{" "}
           </Typography>
           {/* <div className="lang-toggle">  */}
           { isLangEng ?

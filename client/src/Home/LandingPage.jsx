@@ -12,7 +12,11 @@ import { useEffect } from 'react';
 import { addTours } from '../Redux/slice';
 import { useSelector } from 'react-redux';
 import axios from 'axios' ;
+
+import Footer from '../Components/Footer/footer';
+
 import { getDirection } from '../Redux/slice';
+
 
 
 
@@ -48,6 +52,7 @@ const LandingPage = () => {
 			<SpecialOffer />
 			<About />
 			<Contact />
+      <Footer/>
 		</>
 	);
 };

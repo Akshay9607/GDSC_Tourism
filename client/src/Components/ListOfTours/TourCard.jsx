@@ -58,7 +58,7 @@ function TourCard() {
 					</Box>
 					<br />
 					<Typography variant='h6' fontWeight='bold' className='tourName'>
-						{'Marashtra'} , {'Pune'}
+						{'Maharashtra'} , {'Pune'}
 					</Typography>{' '}
 					<br />
 					<br />

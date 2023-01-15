@@ -75,7 +75,7 @@ const getTourByIDArabic = async (req, res, next) => {
 
 module.exports = {
 	addTour,
-	getAllTours ,
+	getAllTours,
 	getAllToursEnglish,
 	getAllToursArabic,
 	getTourByIDEnglish,
