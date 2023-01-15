@@ -82,3 +82,16 @@ border-radius: 50px;
     margin-top: 30px;
     font-size: large;
 }
+.datepick{
+    height: 40px;
+    width: 160px;
+    text-align: center;
+    position: relative;
+    top: -10px;
+    font-size: 14px;
+}
+.srchicon{
+    position: relative;
+    right : 30px;
+    top : 5px ;
+}

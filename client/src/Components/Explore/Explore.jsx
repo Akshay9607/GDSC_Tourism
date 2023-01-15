@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, Box, Typography, TextField, Button } from '@mui/material';
 import { FiSearch } from 'react-icons/fi';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import './Explore.css';
 import cardimg2 from '../../images/img5.jpg';
 import cardimg3 from '../../images/img8.jpg';
@@ -10,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 const Explore = () => {
 	const [person, setPerson] = useState(1);
+	const [startDate, setStartDate] = useState(new Date());
 	const [city, setCity] = useState('');
 
 	const { t, i18n } = useTranslation();
@@ -118,10 +121,13 @@ const Explore = () => {
 				</Box>
 				{/* <Box> <TextField id="standard-basic" label="Dates" defaultValue="21/10/2022" variant="standard" /> </Box> */}
 				<Box>
-					{' '}
-					<input type='date' name='' id='' style={{ fontSize: '25px', marginTop: '7px' }} />{' '}
+				<br />
+					{/* {' '}
+					<input type='date' name='' id='' style={{ fontSize: '25px', marginTop: '7px' }} />{' '} */}
+					<DatePicker className='datepick' selected={startDate} onChange={(date) => setStartDate(date)} height={"40px"}/>
 				</Box>
 				<Box>
+				
 					{' '}
 					<div style={{ border: '1px solid #EBECF0', height: '100%' }}></div>{' '}
 				</Box>
@@ -129,7 +135,7 @@ const Explore = () => {
 					{' '}
 					<Button onClick={listOfTours}>
 						{' '}
-						<FiSearch size={40} />{' '}
+						<FiSearch className='srchicon' size={40} />{' '}
 					</Button>{' '}
 				</Box>
 			</Box>

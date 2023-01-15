@@ -23,7 +23,7 @@ function TourCard() {
     
 	const tours = useSelector(getTours) ;
 	
-    console.log(tours) ;
+    // console.log(tours) ; 
 
 	return (
 		<>
