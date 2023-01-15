@@ -1,0 +1,175 @@
+{
+    "_id": {
+        "$oid": "635d14fe95249d299702a32c"
+    },
+    "destination": "Manali",
+    "price": {
+        "$numberInt": "55000"
+    },
+    "duration": {
+        "$numberInt": "2"
+    },
+    "country": "India",
+    "city": "Manali, Jammu & Kashmir",
+    "description": "Manali is a high-altitude Himalayan resort town in India’s northern Himachal Pradesh state. It has a reputation as a backpacking center and honeymoon destination. Set on the Beas River, it’s a gateway for skiing in the Solang Valley and trekking in Parvati Valley. It's also a jumping-off point for paragliding, rafting and mountaineering in the Pir Panjal mountains, home to 4,000m-high Rohtang Pass.",
+    "image": "https://img.theculturetrip.com/450x/smart/wp-content/uploads/2017/09/manali-1.jpg",
+    "packages": [
+        {
+            "price": {
+                "$numberInt": "15000"
+            },
+            "reviews": [
+                {
+                    "rating": {
+                        "$numberDecimal": "5"
+                    },
+                    "review": "There are private spaces available for lunch , dinner or indeed at any other time like receptions , presentations or braistorms. in addition the restaurant is available for breakfast and private hire as are all the other spaces. Wonderful experience , enjoyed best time of my life",
+                    "_id": {
+                        "$oid": "635d14fe95249d299702a32e"
+                    }
+                },
+                {
+                    "rating": {
+                        "$numberDecimal": "4.5"
+                    },
+                    "review": "There are private spaces available for lunch , dinner or indeed at any other time like receptions , presentations or braistorms. in addition the restaurant is available for breakfast and private hire as are all the other spaces. Wonderful experience , enjoyed best time of my life",
+                    "_id": {
+                        "$oid": "635d14fe95249d299702a32f"
+                    }
+                }
+            ],
+            "shortDescription": "Manali is a high-altitude Himalayan resort town in India’s northern Himachal Pradesh state. It has a reputation as a backpacking center and honeymoon destination. Set on the Beas River.",
+            "imagesPackage": [
+                "https://static.toiimg.com/photo/77760011.cms",
+                "https://www.fabhotels.com/blog/wp-content/uploads/2019/03/Hadimba-Temple.jpg",
+                "https://www.fabhotels.com/blog/wp-content/uploads/2019/03/600x400-21-1280x720.jpg",
+                "https://www.fabhotels.com/blog/wp-content/uploads/2019/03/The-Manali-Gompa.jpg",
+                "https://cms.dpauls.com/images/cityinfo/8437567_Zorbing-in-Manali.jpg"
+            ],
+            "duration": {
+                "$numberInt": "2"
+            },
+            "offer": {
+                "$numberInt": "25"
+            },
+            "schedule": [
+                [
+                    {
+                        "hour": {
+                            "$numberInt": "10"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "Hadimba Devi Temple",
+                        "activityDescription": "This 1500s Hindu temple built of wood in a cedar forest has intricate carvings & a shrine.",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a330"
+                        }
+                    },
+                    {
+                        "hour": {
+                            "$numberInt": "12"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "Old Manali",
+                        "activityDescription": "Relaxed riverside area with cozy backpacker hotels & eateries, plus the 1500s Hadimba Devi Temple.",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a331"
+                        }
+                    },
+                    {
+                        "hour": {
+                            "$numberInt": "2"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "Jogini Falls",
+                        "activityDescription": "This picturesque waterfall in a remote, tranquil setting has shrines below it & is sacred to locals.",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a332"
+                        }
+                    },
+                    {
+                        "hour": {
+                            "$numberInt": "5"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "Museum of Himachal Culture & Folk Art",
+                        "activityDescription": "Small museum showcasing Himachal heritage with various traditional objects & building models",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a333"
+                        }
+                    }
+                ],
+                [
+                    {
+                        "hour": {
+                            "$numberInt": "10"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "The Great Himalayan National Park(office)",
+                        "activityDescription": "Sprawling national park with diverse plant & animal species in a scenic, high-altitude setting",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a334"
+                        }
+                    },
+                    {
+                        "hour": {
+                            "$numberInt": "12"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "Nehru Kund",
+                        "activityDescription": "Visitors can drink at this freshwater spring in a picturesque mountain environment.",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a335"
+                        }
+                    },
+                    {
+                        "hour": {
+                            "$numberInt": "2"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "Bhrigu Lake",
+                        "activityDescription": "Glacial lake located at an elevation of 4250m in the Himalayas & accessible via trekking routes",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a336"
+                        }
+                    },
+                    {
+                        "hour": {
+                            "$numberInt": "5"
+                        },
+                        "minute": {
+                            "$numberInt": "30"
+                        },
+                        "activityTitle": "Siyali Mahadev Temple",
+                        "activityDescription": "Historic Hindu temple dedicated to Lord Shiva & featuring unique wooden architecture.",
+                        "_id": {
+                            "$oid": "635d14fe95249d299702a337"
+                        }
+                    }
+                ]
+            ],
+            "_id": {
+                "$oid": "635d14fe95249d299702a32d"
+            },
+            "city": "Manali",
+            "packageName": "Mind blowing Manali"
+        }
+    ],
+    "__v": {
+        "$numberInt": "0"
+    }
+}
