@@ -5,6 +5,7 @@ import LandingPage from "./Home/LandingPage";
 import AllTours from "./AllTours/AllTours";
 import { useSelector } from "react-redux";
 import { getDirection } from "./Redux/slice";
+import Package from "./Package/Package";
 
 function App() {
   const direction = useSelector(getDirection);
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/tours" element={<AllTours />} />
+          <Route path="/tour/:id" element={<Package />} />
         </Routes>
       </Router>
     </>

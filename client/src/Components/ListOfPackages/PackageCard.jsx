@@ -4,16 +4,19 @@ import { Card, CardContent, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Button } from '@mui/material';
 import ReactStars from 'react-rating-stars-component';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import '../index.css';
 import { useTranslation } from 'react-i18next';
+import { getisLangEng } from '../../Redux/slice';
 
 
-function PackageCard() {
+function PackageCard({ tour}) {
 
 	const {t,i18n} = useTranslation();
+	const currLang = useSelector(getisLangEng);
+	var lang = currLang ? "englishData" : "arabicData";
 
 	return (
 		<>
@@ -27,11 +30,11 @@ function PackageCard() {
 				<div
 					className='cardImage'
 					style={{
-						backgroundImage: `url(https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg)`,
+						backgroundImage: `url(${tour.englishData.imageBanner})`,
 					}}
 				>
 					{/* {packageData[i].destination} */}
-					Lorem, ipsum dolor
+					{ tour[lang].destination}
 				</div>
 				<CardContent>
 					<Box display='flex' justifyContent='space-between'>
@@ -40,7 +43,7 @@ function PackageCard() {
 							<Typography fontSize={15} fontWeight='bold'>
 								{t("duration")}
 							</Typography>
-							<Typography fontSize={15}> 2 - {t("day")} </Typography>
+							<Typography fontSize={15}> { tour[lang].duration} - {t("day")} </Typography>
 						</Box>
 						<span
 							style={{
@@ -52,14 +55,14 @@ function PackageCard() {
 								{t("price")}
 							</Typography>
 							<Typography fontSize={15}>
-								Rs. 2000{' '}
+								Rs. { tour[lang].price}{' '}
 								<span
 									style={{
 										color: '#EE685F',
 									}}
 								>
 									{' '}
-									{10} % {t("off")}
+									{ tour[lang].offer} % {t("off")}
 								</span>
 							</Typography>
 						</Box>
@@ -71,9 +74,7 @@ function PackageCard() {
 						}}
 					>
 						<p>
-							{' '}
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perferendis laboriosam sit tempora soluta
-							ratione temporibus fuga eos molestias voluptas?{' '}
+						{ tour[lang].shortDescription.slice(0,180)}
 						</p>
 					</Box>
 					<Box display='flex' justifyContent='space-around' margin='auto'>
@@ -95,9 +96,11 @@ function PackageCard() {
 							borderRadius: '5px',
 							background: '#98DBAF',
 							width: '200px',
+							textDecoration: 'none',
+							
 						}}
 					>
-						<Link to={`/`}>{t("readmore")}</Link>
+						<Link to={`/tour/${tour._id}`} className="readMoreBtn">{t("readmore")}</Link>
 					</Button>
 				</Box>
 			</Card>
