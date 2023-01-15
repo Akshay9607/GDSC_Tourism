@@ -13,13 +13,13 @@ import { getDirection, getisLangEng, toggleLanguage } from "../../Redux/slice";
 
 
 const Navbar = () => {
-  const[islangEnglish , setLangEng] = useState(true) ; 
+  const isLangEng = useSelector(getisLangEng) ;
+  // const[islangEnglish , setLangEng] = useState(isLangEng) ; 
   const {t , i18n} = useTranslation() ;
   const dispatch = useDispatch() ;
-  const isLangEng = useSelector(getisLangEng) ;
-  const direction = useSelector(getDirection)
+  const direction = useSelector(getDirection) ;
   
-  console.log(isLangEng+"  "+direction) ;
+  console.log(isLangEng+"  "+direction) ;  
 
   
 
@@ -41,7 +41,7 @@ const Navbar = () => {
     }else{
       i18n.changeLanguage('en');
     }
-     dispatch(toggleLanguage()) ;
+    dispatch(toggleLanguage()) ;
   }
 
   return (
