@@ -4,8 +4,12 @@ import { Box } from '@mui/system';
 import '../index.css';
 // import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function SpecialOfferCard() {
+
+   const {t,i18n} = useTranslation();
+
 	return (
 		<>
 			<Card
@@ -46,10 +50,10 @@ function SpecialOfferCard() {
 						></span>
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
-								Duration
+								{("duration")}
 							</Typography>
 							<Typography fontSize={15}>
-								<span>{2} Day</span>
+								<span>{2} {t("day")}</span>
 							</Typography>
 						</Box>
 						<span
@@ -61,10 +65,10 @@ function SpecialOfferCard() {
 						></span>
 						<Box>
 							<Typography fontSize={15} fontWeight='bold'>
-								Price
+								{("price")}
 							</Typography>
 							<Typography fontSize={15}>
-								Rs. {28000} <span style={{ color: '#EE685F' }}>{30}% OFF</span>
+								Rs. {28000} <span style={{ color: '#EE685F' }}>{30}% {t("off")}</span>
 							</Typography>
 						</Box>
 					</Box>
@@ -94,7 +98,7 @@ function SpecialOfferCard() {
 								margin: '1rem',
 							}}
 						>
-							Booking
+							{t("booking")}
 						</Button>
 						<Button
 							variant='contained'
@@ -108,7 +112,7 @@ function SpecialOfferCard() {
 								border: '2px #98DBAF solid',
 							}}
 						>
-							Read More
+							{t("readmore")}
 						</Button>
 					</Link>
 				</Box>

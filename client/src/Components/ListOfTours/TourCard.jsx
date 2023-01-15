@@ -12,15 +12,18 @@ import { AiFillHeart } from 'react-icons/ai';
 // import {useAlert} from 'react-alert'
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getTours } from '../../Redux/slice';
+import { getisLangEng, getTours } from '../../Redux/slice';
 
 
 
 function TourCard() {
 	const { t, i18n } = useTranslation();
+
+	const isLangEng = useSelector(getisLangEng) ;
     
 	const tours = useSelector(getTours) ;
-    console.log(tours) ;
+	
+    // console.log(tours) ; 
 
 	return (
 		<>
@@ -72,23 +75,23 @@ function TourCard() {
 						<Box display='flex' justifyContent='space-around' alignItems='center'>
 							<Typography>
 								{' '}
-								Duration <br />
-								<b> {2} Day</b>
+								{t("duration")} <br />
+								<b> {2} {t("day")}</b>
 							</Typography>
 							<Typography>
 								<div style={{ border: '1px solid #999999', height: '30px' }}> </div>
 							</Typography>
 							<Typography>
 								{' '}
-								Price <br />
+								{t("price")} <br />
 								<b>
-									Rs. 28000 <span style={{ color: '#EE685F' }}>10% OFF</span>
+									Rs. 28000 <span style={{ color: '#EE685F' }}>10% {t("off")}</span>
 								</b>
 							</Typography>
 						</Box>
 					</Card>
 						<Link to={`/`}>
-							<Typography variant='h6' color='white' align='right' margin='1rem'>
+							<Typography variant='h6' color='white' align={isLangEng?'right':'left'} margin='1rem'>
 								<span
 									style={{
 										backgroundColor: '#EE685F',
@@ -98,7 +101,7 @@ function TourCard() {
 									}}
 								>
 									<a href='/package' style={{ color: 'white' }}>
-										View
+										{t("view")}
 									</a>
 								</span>
 							</Typography>

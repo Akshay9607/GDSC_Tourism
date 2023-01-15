@@ -10,12 +10,18 @@ import SpecialOffer from '../Components/SpecialOffer/SpecialOffer';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { addTours } from '../Redux/slice';
-
+import { useSelector } from 'react-redux';
 import axios from 'axios' ;
+import { getDirection } from '../Redux/slice';
 
 
 
-const LandingPage = (props) => {
+const LandingPage = () => {
+
+  // const direction = useSelector(getDirection);
+  // console.log(direction)
+
+  // document.getElementsByTagName("html")[0].setAttribute("dir", direction);
 
   const dispatch = useDispatch() ;
 
@@ -35,7 +41,7 @@ const LandingPage = (props) => {
 
 	return (
 		<>
-			<Navbar dir={props.dir} setDir={props.setDir} />
+			<Navbar />
 			<Explore />
 			<Packages />
 			<ListOfTours />
