@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const tourSchema = new mongoose.Schema({
 	englishData: {
 		type: {
-			title : {
-				type : String ,
-				required : true ,
+			title: {
+				type: String,
+				required: true,
 			},
 			destination: {
 				type: String,
@@ -58,34 +58,37 @@ const tourSchema = new mongoose.Schema({
 			],
 
 			schedule: [
-                [
-					{
-						hour: { type: Number },
-						minute: { type: Number },
-						activityTitle: { type: String },
-						activityDescription: { type: String },
-					},
-			    ]  
+				{
+					type: [
+						{
+							type: {
+								hour: { type: Number },
+								minute: { type: Number },
+								activityTitle: { type: String },
+								activityDescription: { type: String },
+							},
+						},
+					],
+				},
 			],
 
-            booking : [
-				{
-					facebookUrl : {type : String} ,
-					phoneNumber : {type : String} ,
-					twitterUrl : {type : String} ,
-					mailId : {type : String} ,
-					instagramUrl : {type : String} ,
-					discordUrl : {type : String}
-				} ,
-			] ,
-
+			booking: {
+				type: {
+					facebookUrl: { type: String },
+					phoneNumber: { type: String },
+					twitterUrl: { type: String },
+					mailId: { type: String },
+					instagramUrl: { type: String },
+					discordUrl: { type: String },
+				},
+			},
 		},
 	},
 	arabicData: {
 		type: {
-			title : {
-				type : String ,
-				required : true ,
+			title: {
+				type: String,
+				required: true,
 			},
 			destination: {
 				type: String,
@@ -138,26 +141,30 @@ const tourSchema = new mongoose.Schema({
 			],
 
 			schedule: [
-				[
-					{
-						hour: { type: Number },
-						minute: { type: Number },
-						activityTitle: { type: String },
-						activityDescription: { type: String },
-					},
-			   ]
+				{
+					type: [
+						{
+							type: {
+								hour: { type: Number },
+								minute: { type: Number },
+								activityTitle: { type: String },
+								activityDescription: { type: String },
+							},
+						},
+					],
+				},
 			],
 
-			booking : [
-				{
-					facebookUrl : {type : String} ,
-					phoneNumber : {type : String} ,
-					twitterUrl : {type : String} ,
-					mailId : {type : String} ,
-					instagramUrl : {type : String} ,
-					discordUrl : {type : String}
-				} ,
-			] ,
+			booking: {
+				type: {
+					facebookUrl: { type: String },
+					phoneNumber: { type: String },
+					twitterUrl: { type: String },
+					mailId: { type: String },
+					instagramUrl: { type: String },
+					discordUrl: { type: String },
+				},
+			},
 		},
 	},
 });
