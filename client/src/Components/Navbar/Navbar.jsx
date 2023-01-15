@@ -75,7 +75,7 @@ const Navbar = () => {
           { isLangEng ?
             <div className="lang-toggle">
             <Typography fontSize={20} > {t('Arabic')} </Typography>
-            <CgToggleOff size="2rem" color="#EE685F" onClick={changeLang}  />
+            <CgToggleOff cursor={"pointer"} size="2rem" color="#EE685F" onClick={changeLang}  />
             <Typography fontSize={20} color="#EE685F" fontWeight={"Bold"}>
               {t('English')}
             </Typography> 
@@ -83,7 +83,7 @@ const Navbar = () => {
             : 
             <div className="lang-toggle">
             <Typography fontSize={20} color="#EE685F" fontWeight={"Bold"} >{t('Arabic')}</Typography>
-            <CgToggleOn size="2rem" color="#EE685F" onClick={changeLang} />
+            <CgToggleOn cursor={"pointer"} size="2rem" color="#EE685F" onClick={changeLang} />
             <Typography fontSize={20}  >
             {t('English')}
             </Typography>
