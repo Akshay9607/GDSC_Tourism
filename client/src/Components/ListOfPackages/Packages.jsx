@@ -4,13 +4,15 @@ import PackageCard from './PackageCard';
 import { Box } from '@mui/system';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getisLangEng } from '../../Redux/slice';
+import { getisLangEng, getTours } from '../../Redux/slice';
+
 
 const Packages = () => {
 
 	const {t,i18n} = useTranslation() ;
-	const isLangEng = useSelector(getisLangEng) ;
-
+	const isLangEng = useSelector(getisLangEng);
+	const tours = useSelector(getTours)
+	console.log(tours)
 	return (
 		<>
 			<div className='e2' id='ourpackages' style={{ marginTop: '10rem' }}>
@@ -35,9 +37,9 @@ const Packages = () => {
 				style={{ overflowX: 'scroll', padding: '20px' }}
 				className='packagesBox'
 			>
-				<PackageCard />
-				<PackageCard />
-				<PackageCard />
+				
+				{tours.map(tour => <PackageCard key={ tour._id} tour={ tour} />) }
+				
 			</Box>
 			<br />
 			<br />

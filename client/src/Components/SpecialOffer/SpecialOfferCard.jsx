@@ -2,14 +2,16 @@ import react from 'react';
 import { Card, Typography, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import '../index.css';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { getisLangEng } from '../../Redux/slice';
 
-function SpecialOfferCard() {
+function SpecialOfferCard({ tour}) {
 
    const {t,i18n} = useTranslation();
-
+   const currLang = useSelector(getisLangEng) ;
+   var lang = currLang ? "englishData" : "arabicData";
 	return (
 		<>
 			<Card
@@ -24,7 +26,7 @@ function SpecialOfferCard() {
 					className='cardImage-1'
 					style={{
 						borderRadius: '1rem 1rem 0 0',
-						backgroundImage: `url(https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg)`,
+						backgroundImage: `url(${tour[lang].imageBanner})`,
 					}}
 				>
 					<Box
@@ -39,7 +41,7 @@ function SpecialOfferCard() {
 							<Typography fontSize={15} fontWeight='bold'>
 								{t('city')}
 							</Typography>
-							<Typography fontSize={15}>{'Pune'}</Typography>
+							<Typography fontSize={15}>{tour[lang].destination}</Typography>
 						</Box>
 						<span
 							style={{
@@ -53,7 +55,7 @@ function SpecialOfferCard() {
 								{t("duration")}
 							</Typography>
 							<Typography fontSize={15}>
-								<span>{2} {t("day")}</span>
+								<span>{tour[lang].duration} {t("day")}</span>
 							</Typography>
 						</Box>
 						<span
@@ -68,16 +70,15 @@ function SpecialOfferCard() {
 								{t("price")}
 							</Typography>
 							<Typography fontSize={15}>
-								Rs. {28000} <span style={{ color: '#EE685F' }}>{30}% {t("off")}</span>
+								Rs. {tour[lang].price} <span style={{ color: '#EE685F' }}>{tour[lang].offer}% {t("off")}</span>
 							</Typography>
 						</Box>
 					</Box>
 				</div>
 				<Box padding='.5rem 1rem 1rem 1rem'>
-					<h2>{'Mahabaleshwar'}</h2>
+					<h2>{tour[lang].destination}</h2>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus at perferendis culpa excepturi, asperiores
-						ipsam odio veniam accusantium sequi sunt pariatur, eaque officia.
+						{tour[lang].shortDescription}
 					</p>
 				</Box>
 				<Box
@@ -86,7 +87,7 @@ function SpecialOfferCard() {
 						margin: '5px',
 					}}
 				>
-					<Link to={`/`}>
+					<Link to={`/tour/${tour._id}`}>
 						<Button
 							variant='contained'
 							className='readMoreBtn'
