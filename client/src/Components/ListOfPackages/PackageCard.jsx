@@ -74,7 +74,7 @@ function PackageCard({ tour}) {
 						}}
 					>
 						<p>
-						{ tour[lang].shortDescription.slice(0,180)}
+						{ tour[lang].description.slice(0,180)}......
 						</p>
 					</Box>
 					<Box display='flex' justifyContent='space-around' margin='auto'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Days from './Days/Days';
 import Gallary from './Gallary/Gallary';
-import Booking from './Booking/Booking';
+import Booking from '../Components/Booking/booking';
 // import Footer from '../Footer/Footer';
 import Review from './Review';
 import Navbar from '../Components/Navbar/Navbar';
@@ -12,9 +12,8 @@ const Package = () => {
 		<>
 			<Navbar />
 			<Days />
-			<Booking />
+			<Booking />   
 			{/* <Review /> */}
-			<Footer />
 		</>
 	);
 };

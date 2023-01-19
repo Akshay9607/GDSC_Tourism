@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
 // import tourimg from '../../images/img11.jpg';
 import { Box } from '@mui/system';
 import { Card, Typography } from '@mui/material';
@@ -12,19 +12,50 @@ import { AiFillHeart } from 'react-icons/ai';
 // import {useAlert} from 'react-alert'
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getisLangEng, getTours } from '../../Redux/slice';
-
-
+import {  addToFavourite, getFavourites, getisLangEng, getTours } from '../../Redux/slice';
+import { useDispatch } from 'react-redux';
 
 function TourCard({ tour}) {
 	const { t, i18n } = useTranslation();
-
 	const currLang = useSelector(getisLangEng) ;
-    
+    const dispatch = useDispatch()
 	// const tours = useSelector(getTours) ;
-	var lang = currLang ? "englishData" : "arabicData";
+	let favourites = useSelector(getFavourites);
+	console.log(favourites);
 
-    // console.log(tours) ; 
+	var lang = currLang ? "englishData" : "arabicData";
+	// const [favTour, setFavTour] = useState(JSON.parse(localStorage.getItem('favourite') || '[]'))
+	// console.log(favTour);
+	// let favTour = JSON.parse(localStorage.getItem('favourite') || '[]');;
+	// const likeHandler = (id) => {
+	// 	const index = favTour.indexOf(id);
+	// 	if (index !== -1) {
+	// 		// only splice array when item is found
+	// 		setFavTour(favTour.splice(index)); // 2nd parameter means remove one item only
+	// 	}
+	// 	else{
+	// 		setFavTour(favTour.push(id))
+	// 	}
+	// 	localStorage.setItem('favourite', JSON.stringify(favTour))
+	// 	console.log(favTour)
+	// 	console.log("liked")
+	// }
+
+	const favourite = useSelector(getFavourites);
+	// console.log("favArray : Tourcard :" , favourite);
+
+    const [likeStatus , setLikeStatus] = useState(favourite.includes(tour._id)); 
+    
+
+	const likeHandler = (id) => {
+		
+		if(favourite.indexOf(id)!==-1){
+            setLikeStatus(false) ;
+		}else{
+			setLikeStatus(true) ;
+		}
+        dispatch(addToFavourite(id));
+	}
 
 	return (
 		<>
@@ -53,7 +84,7 @@ function TourCard({ tour}) {
 						</Typography>
 						<Typography>
 							<span className='Heart tourHeading' style={{ fontSize: '40px', margin: '1rem' }}>
-								{true ? <AiFillHeart /> : <FiHeart />}
+								{likeStatus ? <AiFillHeart cursor={"pointer"} onClick={() => likeHandler(tour._id)}/> : <FiHeart cursor={"pointer"} onClick={() => likeHandler(tour._id)} />}
 							</span>
 						</Typography>
 					</Box>
@@ -98,7 +129,7 @@ function TourCard({ tour}) {
 										margin: '1rem',
 									}}
 								>
-									<a href='/package' style={{ color: 'white' }}>
+									<a href='/package' style={{ color: 'white' , textDecoration:"underline 0px #EE685F" }}>
 										{t("view")}
 									</a>
 								</span>

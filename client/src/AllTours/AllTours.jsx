@@ -20,8 +20,8 @@ const AllTours = () => {
     <Navbar /> <br />
     <Filter /> <br />
     <ListOfTours /> 
-    <Footer/><br/>
-    <Booking/>
+    <Footer/>
+   
     </>
   )
 }
