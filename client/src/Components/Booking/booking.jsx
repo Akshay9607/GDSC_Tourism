@@ -48,7 +48,7 @@ const Booking = ({tour}) => {
                <a target='blank'  href={`mailto:${tour.englishData.booking.mailId}?subject=${tour.englishData.title}&body=${tour.englishData.description.slice(20)} , i would like to book this.`} >   <span >   <SiGmail size={50} color="#EA4335"/>   </span> </a>
                <a target='blank' href={`${tour.englishData.booking.instagramUrl}`}>    <span>  <FiInstagram size={50} color="#E1306C" />    </span> </a> 
                <a target='blank' href={`${tour.englishData.booking.discordUrl}`}>    <span>   <SiDiscord size={50} color="#36393e"/>   </span> </a>
-               
+                  
                    
                </Box>
                <br/>
