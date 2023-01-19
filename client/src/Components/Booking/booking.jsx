@@ -9,9 +9,16 @@ import { BsWhatsapp } from 'react-icons/bs'
 import { useTranslation } from 'react-i18next';
 
 
-const Booking = () => {
+const Booking = ({tour}) => {
     const { t, i18n } = useTranslation();
-    var tourBooking = "Hello welcome !!"
+    console.log(tour)
+
+    // var tourBooking = "Tour Title : " + tour.englishData.title + " " + "tour City : " + tour.englishData.city + "\n" +  tour.englishData.duration
+    var tourBooking = `Tour Title : ${tour.englishData.title} 
+    Tour City : ${tour.englishData.city} 
+    Tour Duration : ${tour.englishData.duration}`
+
+
   return (
     <>
         <Box  className="Booking">
@@ -31,15 +38,16 @@ const Booking = () => {
            <Box  display='flex' className="bookIcons" justifyContent='space-around'>
       
               
-           <a href="">   <span >   <FiFacebook size={50} color="#3b5998"/>  </span>  </a>
-               <a href="">  <span >   <FaTelegram size={50} color="#0088cc " /></span>  </a>  
-               <a href={`https://wa.me/+919657248532?text=${tourBooking}`} target='blank'>  <span >  <BsWhatsapp size={50} color="#4FCE5D " />   </span> </a>  
+           <a target='blank' href={`${tour.englishData.booking.facebookUrl}`}>   <span >   <FiFacebook size={50} color="#3b5998"/>  </span>  </a>
+               <a target='blank' href={`${tour.englishData.booking.discordUrl}`}>  <span >   <FaTelegram size={50} color="#0088cc " /></span>  </a>  
+               {/* <a  target='blank' href={`https://wa.me/${tour.englishData.booking.phoneNumber}?text=${tourBooking}`}>  <span >  <BsWhatsapp size={50} color="#4FCE5D " />   </span> </a>   */}
+               <a  target='blank' href={`https://wa.me/${+919657248532}?text=${tourBooking}`}>  <span >  <BsWhatsapp size={50} color="#4FCE5D " />   </span> </a>  
                
-               <a href="https://twitter.com/i/flow/login">    <span >  <FaTwitterSquare size={50} color="#00acee"/>   </span> </a>
-               <a href="" title='+919607881400'>    <span >   <FiPhoneCall size={50} color="#7f7f7f "/>  </span> </a> 
-               <a href="mailto:akshay.jadhav21@vit.edu?subject=booking package from holidayEscape&body=I liked the package , name : Mind Blowing Manali , i would like to book this." >   <span >   <SiGmail size={50} color="#EA4335"/>   </span> </a>
-               <a href="">    <span>  <FiInstagram size={50} color="#E1306C" />    </span> </a> 
-               <a href="">    <span>   <SiDiscord size={50} color="#36393e"/>   </span> </a>
+               <a target='blank' href={`${tour.englishData.booking.twitterUrl}`}>    <span >  <FaTwitterSquare size={50} color="#00acee"/>   </span> </a>
+               <a target='blank' href="" title={`${tour.englishData.booking.phoneNumber}`}>    <span >   <FiPhoneCall size={50} color="#7f7f7f "/>  </span> </a> 
+               <a target='blank'  href={`mailto:${tour.englishData.booking.mailId}?subject=${tour.englishData.title}&body=${tour.englishData.description.slice(20)} , i would like to book this.`} >   <span >   <SiGmail size={50} color="#EA4335"/>   </span> </a>
+               <a target='blank' href={`${tour.englishData.booking.instagramUrl}`}>    <span>  <FiInstagram size={50} color="#E1306C" />    </span> </a> 
+               <a target='blank' href={`${tour.englishData.booking.discordUrl}`}>    <span>   <SiDiscord size={50} color="#36393e"/>   </span> </a>
                
                    
                </Box>
