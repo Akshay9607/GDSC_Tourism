@@ -42,7 +42,7 @@ const Booking = ({tour}) => {
                <a target='blank' href={`${tour.englishData.booking.discordUrl}`}>  <span >   <FaTelegram size={50} color="#0088cc " /></span>  </a>  
                {/* <a  target='blank' href={`https://wa.me/${tour.englishData.booking.phoneNumber}?text=${tourBooking}`}>  <span >  <BsWhatsapp size={50} color="#4FCE5D " />   </span> </a>   */}
                <a  target='blank' href={`https://wa.me/${+919657248532}?text=${tourBooking}`}>  <span >  <BsWhatsapp size={50} color="#4FCE5D " />   </span> </a>  
-               
+                   
                <a target='blank' href={`${tour.englishData.booking.twitterUrl}`}>    <span >  <FaTwitterSquare size={50} color="#00acee"/>   </span> </a>
                <a target='blank' href="" title={`${tour.englishData.booking.phoneNumber}`}>    <span >   <FiPhoneCall size={50} color="#7f7f7f "/>  </span> </a> 
                <a target='blank'  href={`mailto:${tour.englishData.booking.mailId}?subject=${tour.englishData.title}&body=${tour.englishData.description.slice(20)} , i would like to book this.`} >   <span >   <SiGmail size={50} color="#EA4335"/>   </span> </a>
