@@ -97,9 +97,10 @@ function SpecialOfferCard({ tour}) {
 								background: '#98DBAF',
 								width: '250px',
 								margin: '1rem',
+								textDecoration:'underline 0px #98DBAF'
 							}}
 						>
-							{t("booking")}
+						{t("booking")} 
 						</Button>
 						<Button
 							variant='contained'
@@ -111,6 +112,7 @@ function SpecialOfferCard({ tour}) {
 								width: '250px',
 								margin: '1rem',
 								border: '2px #98DBAF solid',
+								textDecoration:'underline 0px white'
 							}}
 						>
 							{t("readmore")}

@@ -6,6 +6,8 @@ import AllTours from "./AllTours/AllTours";
 import { useSelector } from "react-redux";
 import { getDirection } from "./Redux/slice";
 import Package from "./Package/Package";
+import Favourite from "./Components/Favourites/Favourite";
+
 
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/tours" element={<AllTours />} />
           <Route path="/tour/:id" element={<Package />} />
-      
+
+          <Route path="/favourites" element={<Favourite />} />
+
         </Routes>
       </Router>
     </>

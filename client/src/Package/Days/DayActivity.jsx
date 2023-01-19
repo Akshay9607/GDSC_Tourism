@@ -5,22 +5,25 @@ import {
 	VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import { useSelector } from 'react-redux';
+import { getisLangEng } from '../../Redux/slice';
 
 export default function DayActivity(props) {
 	console.log(props.data);
+	const isLangEng = useSelector(getisLangEng);
 	let eachDay = [];
 	eachDay = props.data.map((dt) => {
 		// console.log(dt)
 		return (
 			<>
 				<VerticalTimelineElement
-					iconStyle={{ background: '#21D461', color: '#fff' }}
+					iconStyle={{ background: '#CCF5DA	', color: '#fff' }}
 				>
-					<h3 className='vertical-timeline-element-title'>
+					<h3 className='vertical-timeline-element-title' sx={{width:"50%"}}>
 						{' '}
 						{dt.activityTitle} - {dt.hour} : {dt.minute}{' '}
 					</h3>
-					<p>
+					<p className='vertical-timeline-element-title' sx={{width:"50%"}}>
 						{' '}
 						{dt.activityDescription} 
 					</p>
@@ -30,15 +33,15 @@ export default function DayActivity(props) {
 	});
 
 	let pics = [];
-	pics = props.img.slice(0,3).map((image) => {
+	pics = props.img.slice(0,4).map((image) => {
 		return (
 			<>
 				<img
 					src={image}
 					alt=''
 					style={{
-						width: '40%',
-						height: '20%',
+						width: '95%',
+						height: '190px',
 						objectFit:"cover",
                         margin: "0.5rem",
 						borderRadius: '1rem',
@@ -49,20 +52,21 @@ export default function DayActivity(props) {
 	});
 
 	return (
-		<>
-
-			<VerticalTimeline lineColor={'black'} layout={'1-column-left'} >
+		<div style={{display:"flex" , width:"90%" ,justifyContent:"center" }}>
+           
+			<VerticalTimeline lineColor={'#000'}  layout={isLangEng ? '1-column-left':'1-column-right' } >
 				{ eachDay}
 			</VerticalTimeline>
 			<Box
 				sx={{
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'flex-end'
+					alignItems: 'flex-end',
+					
 				}}
 			>
 				{pics}
 			</Box>
-		</>
+		</div>
 	);
 }

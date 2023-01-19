@@ -69,7 +69,7 @@ const Navbar = () => {
             <a className="anchor" href="/tours">{t('navone')}</a>
           </Typography>
           <Typography className="navItem" fontSize={20}>
-            <a className="anchor" href="/favourite">{t('navtwo')}</a>{" "}
+            <a className="anchor" href="/favourites">{t('navtwo')}</a>{" "}
           </Typography>
           {/* <div className="lang-toggle">  */}
           { isLangEng ?
