@@ -9,6 +9,7 @@ import Package from "./Package/Package";
 import Favourite from "./Components/Favourites/Favourite";
 
 
+
 function App() {
   const direction = useSelector(getDirection);
 
@@ -21,7 +22,9 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/tours" element={<AllTours />} />
           <Route path="/tour/:id" element={<Package />} />
+
           <Route path="/favourites" element={<Favourite />} />
+
         </Routes>
       </Router>
     </>
