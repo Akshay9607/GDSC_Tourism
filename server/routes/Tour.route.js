@@ -11,6 +11,8 @@ router.get('/get/en/:id', tourController.getTourByIDEnglish);
 router.get('/get/ar/:id', tourController.getTourByIDArabic);
 router.get('/get/all', tourController.getAllTours) 
 
+router.post('/book', tourController.sendBookTourMessage)
+
 router.get('/', (req, res, next) => {
 	res.send('Tour Route');
 });
