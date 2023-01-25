@@ -9,19 +9,68 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { useSelector } from 'react-redux';
+import { addTours, getTours } from '../../Redux/slice';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 
 const Filter = () => {
 
     const [name , setName] = useState("") ;
     const {t,i18n} = useTranslation();
+    const tours = useSelector(getTours);
+    // const dispatch = useDispatch();
+    
+    // let [filteredTours , setFilteredTours] = useState(tours);
+    // console.log("Tours filter :",tours);
+
+    let filteredTours = [] ;
+
+    // console.log("Name",name);
+     
+    tours.forEach(tour => {
+        let isPresent =  tour.englishData.destination.toLowerCase().includes(name.toLowerCase()) ||
+                             tour.englishData.description.toLowerCase().includes(name.toLowerCase()) ||
+                                tour.englishData.title.toLowerCase().includes(name.toLowerCase())  ||
+                                tour.englishData.city.toLowerCase().includes(name.toLowerCase())  ||
+                                tour.englishData.country.toLowerCase().includes(name.toLowerCase()) ;
+
+             console.log("ispressent",isPresent)                   
+        if(isPresent){
+             filteredTours.push(tour);
+        }
+    });
+
+// console.log("filtered:",filteredTours);
+
+    // useEffect(()=>{
+    //     console.log("inside useEffect:",filteredTours);
+    //     setFilteredTours(
+    //          tours.filter((tour)=>{
+    //            // console.log("inside filter:",tour.englishData.destination);
+    //            let isPresent =  tour.englishData.destination.includes(`${name}`) || 
+    //                             tour.englishData.description.includes(`${name}`) ||
+    //                             tour.englishData.title.includes(`${name}`)  ||
+    //                             tour.englishData.city.includes(`${name}`)  ||
+    //                             tour.englishData.country.includes(`${name}`)
+       
+    //              console.log("ispresent",isPresent);               
+    //             return isPresent ;
+    //        }))
+       
+    // },[name,filteredTours])
+
 
     // var filterOption = "" ;
 var getQuery = (key) => {
     name = key.target.value
-    console.log(name)
+    console.log(name) 
 }
+
+// const showFilteredTours = () => {
+//     // dispatch(addTours(filteredTours));
+// }
 
 return(
     <>
@@ -34,7 +83,8 @@ return(
                         value = {name}
                          />
                 <span style={{padding:".5rem" , borderRadius:"0 2rem 2rem 0", border:"none", }}>
-                 <Link to={`/tours/${name}`} ><FaSearch type='submit' />  </Link>
+                 <Link to={`/tours/${name}`} ><FaSearch type='submit'  />  </Link>
+                 {/* <FaSearch type='submit' onClick={showFilteredTours} />  */}
                 </span>
             </div>
     </>

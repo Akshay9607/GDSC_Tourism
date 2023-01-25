@@ -14,11 +14,14 @@ const AllTours = () => {
 
   // document.getElementsByTagName("html")[0].setAttribute("dir", direction);
 
+
+
+
   return (
     <>
    <br />
     <Navbar /> <br />
-    <Filter /> <br />
+    <Filter  /> <br />
     <ListOfTours /> 
     <Footer/>
    

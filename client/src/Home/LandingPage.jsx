@@ -30,11 +30,13 @@ const LandingPage = () => {
   const dispatch = useDispatch() ;
 
   const addToursToStore = async () => {
+    console.log("before dispatch axios before")
     const response = await axios
     .get("http://localhost:8050/api/tour/get/all")
     .catch((err)=>{
       console.log("Err",err) ;
     })
+    
     dispatch(addTours(response.data));
 }
 
@@ -42,7 +44,6 @@ const LandingPage = () => {
       addToursToStore();
   }) ;
  
-
 	return (
 		<>
 			<Navbar />
