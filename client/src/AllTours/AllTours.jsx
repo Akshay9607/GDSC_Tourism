@@ -5,6 +5,8 @@ import Filter from '../Components/Filters/Filter'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/footer'
 import Booking from '../Components/Booking/booking'
+import FilteredTours from '../Components/Filters/FilteredTours'
+
 
 
 const AllTours = () => {
@@ -22,7 +24,8 @@ const AllTours = () => {
    <br />
     <Navbar /> <br />
     <Filter  /> <br />
-    <ListOfTours /> 
+    {/* <ListOfTours />  */}
+   <FilteredTours />
     <Footer/>
    
     </>
