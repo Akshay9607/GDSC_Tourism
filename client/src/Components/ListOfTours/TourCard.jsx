@@ -21,7 +21,7 @@ function TourCard({ tour}) {
     const dispatch = useDispatch()
 	// const tours = useSelector(getTours) ;
 	let favourites = useSelector(getFavourites);
-	console.log(favourites);
+	// console.log(favourites);
 
 	var lang = currLang ? "englishData" : "arabicData";
 	// const [favTour, setFavTour] = useState(JSON.parse(localStorage.getItem('favourite') || '[]'))

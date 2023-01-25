@@ -90,6 +90,41 @@ const getTourByIDArabic = async (req, res, next) => {
 	}
 };
 
+const findTours = async (req, res, next) => {
+	const nameQuery = req.params.name;
+	try{
+        const filteredTours = await Tour.find(
+			{
+				$or : [{destination: {
+					$regex: nameQuery,
+					$options: '$i',
+				}},
+				{city: { $regex: nameQuery, $options: '$i' }},
+				{country: {
+					$regex: nameQuery,
+					$options: '$i',
+				}},
+				{description: {
+					$regex: nameQuery,
+					$options: '$i',
+				}},]
+			// },
+			// (err, data) => {
+			// 	if (err) {
+			// 		console.log(err+"Error is in backend");
+			// 		res.send(err);
+			// 	} else {
+			// 		res.send(data);
+			// 	}
+			}
+		);
+		res.status(200).json(filteredTours);
+	}catch(err){
+		res.status(500).json({ error: err.message });
+	}
+};
+
+
 module.exports = {
 	addTour,
 	getAllTours,
@@ -98,4 +133,5 @@ module.exports = {
 	getTourByIDEnglish,
 	getTourByIDArabic,
 	sendBookTourMessage,
+	findTours,
 };

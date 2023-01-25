@@ -1,10 +1,14 @@
 import React from 'react';
 import TourCard from './TourCard';
 import { useSelector } from 'react-redux';
-import { getTours } from '../../Redux/slice';
+import { getFiltered, getTours } from '../../Redux/slice';
 
-function ListOfTours() {
-	const tours = useSelector(getTours)
+function ListOfTours( props ) {
+	let tours = useSelector(getTours);
+    // if(props && props.isFiltered){
+	// 	tours = useSelector(getFiltered);
+	// }
+	console.log("main:",tours);
 	return (
 		<>
 			{tours.slice(0,5).map(tour => <TourCard key={tour._id} tour={ tour} />)}
