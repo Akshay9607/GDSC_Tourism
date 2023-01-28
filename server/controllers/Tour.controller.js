@@ -18,6 +18,7 @@ const sendBookTourMessage = (req, res, next) => {
 };
 
 const addTour = async (req, res, next) => {
+	
 	Tour.init().then(async () => {
 		var new_tour = new Tour({
 			englishData: req.body.englishData,

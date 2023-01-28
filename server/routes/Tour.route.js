@@ -9,10 +9,10 @@ router.get('/get/en', tourController.getAllToursEnglish);
 router.get('/get/ar', tourController.getAllToursArabic);
 router.get('/get/en/:id', tourController.getTourByIDEnglish);
 router.get('/get/ar/:id', tourController.getTourByIDArabic);
-router.get('/get/all', tourController.getAllTours) ;
-router.get('/get/tour/:name',tourController.findTours);
+router.get('/get/all', tourController.getAllTours);
+router.get('/get/tour/:name', tourController.findTours);
 
-router.post('/book', tourController.sendBookTourMessage)
+router.post('/book', tourController.sendBookTourMessage);
 
 router.get('/', (req, res, next) => {
 	res.send('Tour Route');

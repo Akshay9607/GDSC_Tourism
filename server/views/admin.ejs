@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>HolidayEscape | Admin</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<!-- NAVBAR START -->
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- NAVBAR END -->
+		<!-- HERO START -->
+		<div class="container border mt-3">
+			<form class="row g-3" action="/api/admin/addTour" method="post">
+				<div class="d-flex">
+					<div class="container englishData border m-2">
+						<h1>English Data</h1>
+						<hr />
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Title</label>
+							<input type="text" name="titleEn" class="form-control" id="titleEn" placeholder="Title" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Destination</label>
+							<input
+								type="text"
+								class="form-control"
+								id="destinationEn"
+								placeholder="Destination"
+								name="destinationEn"
+							/>
+						</div>
+
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Country</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Country" name="countryEn" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">City</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="City" name="cityEn" />
+						</div>
+						<div class="form-floating">
+							<textarea
+								style="height: 200px"
+								class="form-control"
+								placeholder="Discription"
+								id="floatingTextarea"
+								name="descriptionEn"
+							></textarea>
+							<label for="floatingTextarea">Description</label>
+						</div>
+						<br />
+						<h3>General Information</h3>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Price</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Price" name="price" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Duration</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Duration" name="duration" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Image Banner</label>
+							<input
+								type="text"
+								class="form-control"
+								id="titleEn"
+								name="imageBanner"
+								placeholder="Paste Image Link here"
+							/>
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Offer</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Offer" name="offer" />
+						</div>
+
+						<div class="col-12 mb-2">
+							<label for="floatingTextarea">Tour Images</label>
+							<input
+								type="text"
+								class="form-control"
+								id="titleEn"
+								placeholder="Enter Tour Images comma(,) seperated"
+								name="tourImages"
+							/>
+						</div>
+						<br />
+						<h3>Contact Detail</h3>
+
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Facebook Url</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Facebook Url" name="facebookUrl" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Phone Number</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Phone Number" name="phoneNumber" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Twitter Url</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Twitter Url" name="twitterUrl" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Email-ID</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Email-ID" name="mailId" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Instagram Url</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Instagram Url" name="instagramUrl" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">Discord Url</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="Discord Url" name="discordUrl" />
+						</div>
+					</div>
+					<!--  -->
+					<div class="container arabicData border m-2">
+						<h1>البيانات العربية</h1>
+						<hr />
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">العنوان</label>
+							<input type="text" name="titleAr" class="form-control" id="titleEn" placeholder="العنوان" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">المكان المقصود</label>
+							<input
+								type="text"
+								class="form-control"
+								id="destinationEn"
+								placeholder="المكان المقصود"
+								name="destinationAr"
+							/>
+						</div>
+
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">دولة</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="دولة" name="countryAr" />
+						</div>
+						<div class="col-12 mb-2">
+							<label for="titleEn" class="form-label">مدينة</label>
+							<input type="text" class="form-control" id="titleEn" placeholder="مدينة" name="cityAr" />
+						</div>
+						<div class="form-floating">
+							<textarea
+								style="height: 200px"
+								class="form-control"
+								placeholder="وصف"
+								id="floatingTextarea"
+								name="descriptionAr"
+							></textarea>
+							<label for="floatingTextarea">وصف</label>
+						</div>
+					</div>
+				</div>
+				<button type="submit">Add</button>
+			</form>
+		</div>
+		<!-- HERO END -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
