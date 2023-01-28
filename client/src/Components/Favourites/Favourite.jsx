@@ -38,8 +38,8 @@ let tours = useSelector(getTours);
 
    
 let favouriteArray = tours.filter((id) => favourites.includes(id._id) )
-console.log("Hey tours : " ,favouriteArray);
-console.log(favourites)
+// console.log("Hey tours : " ,favouriteArray);
+// console.log(favourites)
 
 	return (
 		<>

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import {toursReducer, langReducer,favouriteReducer} from "./slice"
+import {toursReducer, langReducer,favouriteReducer,filteredReducer} from "./slice"
 
 import storage from "redux-persist/lib/storage"
 import {persistReducer} from "redux-persist"
@@ -15,7 +15,8 @@ const persistConfig = {
 const reducer = combineReducers({
   tours : toursReducer ,
   isEnglish : langReducer,
-  favourites : favouriteReducer
+  favourites : favouriteReducer,
+  filteredTours : filteredReducer
 })
 
 const persistedReducer = persistReducer(persistConfig,reducer);
