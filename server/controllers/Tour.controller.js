@@ -3,7 +3,7 @@ const twilio = require('twilio');
 
 const sendBookTourMessage = (req, res, next) => {
 	const TWILIO_ACCOUNT_SID = 'AC2971ddc5bd7ce83af63d029e700175fd';
-	const TWILIO_AUTH_TOKEN = 'a645b051fb072004b56537607c11caec';
+	const TWILIO_AUTH_TOKEN = '63124552ada0e8907c6f691b56e43be7';
 	const { body, mediaUrl } = req.body;
 	const client = twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 	client.messages
@@ -14,7 +14,7 @@ const sendBookTourMessage = (req, res, next) => {
 			mediaUrl,
 		})
 		.then((message) => console.log(message.sid))
-		.catch((err) => console.log(err.message));
+		.catch((err) => console.log('Error : ', err.message));
 };
 
 const addTour = async (req, res, next) => {
