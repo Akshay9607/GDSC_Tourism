@@ -29,19 +29,38 @@ const LandingPage = () => {
 
   const dispatch = useDispatch() ;
 
-  const addToursToStore = async () => {
-    console.log("before dispatch axios before")
-    const response = await axios
-    .get("http://localhost:8050/api/tour/get/all")
-    .catch((err)=>{
-      console.log("Err",err) ;
-    })
-    
-    dispatch(addTours(response.data));
-}
+//   const addToursToStore = async () => {
+//     const response = await axios
+//     .get("http://localhost:8050/api/tour/get/all")
+//     .catch((err)=>{
+//       console.log("Err",err) ;
+//     })
+  
+//     dispatch(addTours(response.data));
+// }
+
+let addToursToStore = new Promise((resolve,reject)=>{
+  let request = new XMLHttpRequest();
+  const url = "http://localhost:8050/api/tour/get/all";
+  request.addEventListener("loadend", function() {
+    const response = JSON.parse(this.responseText);
+    if (this.status === 200) {
+      dispatch(addTours(response))
+      resolve(response);
+    } else {
+      reject([this, response]);
+    }
+  });
+  request.open("GET", url, true);
+  request.send();
+})
 
   useEffect(()=>{
-      addToursToStore();
+      // addToursToStore();
+      addToursToStore.then((res)=>{
+        console.log("Entered into then")
+        console.log("Data : ",res);
+      })
   }) ;
  
 	return (
